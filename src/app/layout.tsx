@@ -4,7 +4,7 @@ import './globals.css'
 import Navbar from '@/components/Navbar'
 
 const inter = Inter({ subsets: ['latin'] })
-export const playFair = Playfair_Display({subsets: ['latin'], variable: '--font-playfair'})
+const fontPlayFair = Playfair_Display({subsets: ['latin'], variable: '--font-playfair'})
 
 export const metadata: Metadata = {
   title: 'Club Stampz',
@@ -17,8 +17,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`${playFair.variable}`}>
-      <body className="bg-black text-white font-playfair">
+    <html lang="en" className={`${fontPlayFair.variable}`}>
+      <body className="bg-black text-white font-playfair antialiased">
         <Navbar /> 
         {children}</body>
     </html>
