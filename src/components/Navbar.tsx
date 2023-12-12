@@ -43,9 +43,9 @@ const Navbar: FC<NavbarProps> = ({ }) => {
 
 
     return (
-        <nav className="fixed  top-0 left-0 p-1 mr-5 font-semibold items-center z-10 flex flex-row w-full px-2 text-white shrink-0 bg-background">
+        <nav className="fixed  top-0 left-0 mr-5 font-semibold items-center bg-black z-10 flex flex-row w-full text-white shrink-0 bg-background">
 
-            <div className='hidden sm:flex items-center sm:pt-10 flex-row'>
+            <div className='hidden px-2 sm:flex  items-center sm:pt-10 flex-row'>
                 <Link href="/" className=''>
                     <Image
                         width={30}
@@ -71,8 +71,8 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                 </div>
 
             </div>
-            <div className='w-full sm:hidden'>
-                <div className='grid grid-cols-3 relative py-4 items-center'>
+            <div className='w-full px-2  sm:hidden'>
+                <div className='grid w-full grid-cols-3  relative py-4 items-center'>
                     <div className='col-span-1 flex items-center'>
                     <button hidden={open} className=' ' onClick={() => setOpen((x) => !x)}>
                             <Menu />
