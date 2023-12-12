@@ -1,3 +1,4 @@
+// import '@radix-ui/themes/styles.css';
 import type { Config } from 'tailwindcss'
 
 const config: Config = {
@@ -8,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      colors: {
+        gold: '#FFD700',
+        underlineColor: '#FFD700',
+      },
       fontFamily: {
         'playfair': ["var(--font-playfair)"],
       }
