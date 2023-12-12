@@ -8,10 +8,14 @@ export default function Home() {
 
       
       <div className='grid grid-cols-3 gap-4 w-full  rounded-md mt-20 text-white' >
-        <div className='col-start-2 col-span-1 '>
-        <h1 className='text-5xl'>Coming Soon...</h1>
+        <div className='col-span-3 items-center sm:mt-10 flex justify-center '>
+        <h1 className='text-3xl sm:text-5xl'>Club Stampz</h1>
+
+        
         </div>
-      
+        <div className='col-span-3 text-xl items-center justify-center flex'>
+          Coming Soon
+        </div>
           
       </div>
     </main>
