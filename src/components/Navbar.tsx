@@ -50,7 +50,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                     <Image
                         width={30}
                         height={30}
-                        alt='Club Stampz logo'
+                        alt='Club Stamps logo'
                         src='/images/logo.png'
                     />
 
@@ -86,7 +86,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                             <Image
                                 width={30}
                                 height={30}
-                                alt='Club Stampz logo'
+                                alt='Club Stamps logo'
                                 src='/images/logo.png'
                             />
 

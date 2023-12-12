@@ -11,7 +11,7 @@ const inter = Inter({ subsets: ['latin'] })
 const fontPlayFair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
 
 export const metadata: Metadata = {
-  title: 'Club Stampz',
+  title: 'Club Stamps',
   description: 'Golf club customization',
 }
 

@@ -9,7 +9,7 @@ export default function Home() {
       
       <div className='grid grid-cols-3 gap-4 w-full  rounded-md mt-20 text-white' >
         <div className='col-span-3 items-center sm:mt-10 flex justify-center '>
-        <h1 className='text-3xl sm:text-5xl'>Club Stampz</h1>
+        <h1 className='text-3xl sm:text-5xl'>Club Stamps</h1>
 
         
         </div>
