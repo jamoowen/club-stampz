@@ -3,8 +3,8 @@ import { DefineSchemaOptions, DocumentDefinition, SchemaType, SchemaTypeDefiniti
 
 
 const homepageSchema: DocumentDefinition =  {
-    name: "homepage-text",
-    title: "Homepage Text",
+    name: "homepageData",
+    title: "Homepage Data",
     type: 'document',
     fields: [
         {
@@ -12,7 +12,27 @@ const homepageSchema: DocumentDefinition =  {
             title: "Hero Image",
             type: "image",
            
-        }
+        },
+        {
+            name: "productImage",
+            title: "Product Image",
+            type: "image",
+        },
+        {
+            name: "productText",
+            title: "Product Text",
+            type: "text",
+        },
+        {
+            name: "aboutImage",
+            title: "About Image",
+            type: "image",
+        },
+        {
+            name: "aboutText",
+            title: "About Text",
+            type: "text",
+        },
     ]
 }
 

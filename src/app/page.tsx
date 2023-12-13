@@ -16,6 +16,7 @@ export default function Home() {
         <div className='col-span-3 text-xl items-center justify-center flex'>
           Coming Soon
         </div>
+        
           
       </div>
     </main>

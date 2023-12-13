@@ -63,6 +63,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                                 key={key}
                                 href={value.link}
                                 className='hover:underline font-semibold leading-0 underline-offset-4 decoration-underlineColor'
+                                
                             >
                                 {value.name}
                             </Link>
@@ -154,6 +155,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                                                                         key={key}
                                                                         href={value.link}
                                                                         className='hover:underline flex justify-between w-full font-semibold underline-offset-4 decoration-underlineColor'
+                                                                        onClick={()=>setOpen(false)}
                                                                     >
                                                                         {value.name}
                                                                         <ArrowBigRight className='text-gold' />
