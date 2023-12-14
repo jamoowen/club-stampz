@@ -1,6 +1,7 @@
 import { defineConfig } from "sanity";
 import {deskTool} from 'sanity/desk'
 import schemas from "./sanity/schemas";
+import { InferSchemaValues } from "@sanity-typed/types";
 // import {visionTool} from '@sanity/vision'
 const sanityProjectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
 
@@ -11,6 +12,8 @@ const sanityConfig = defineConfig({
     projectId: sanityProjectId!,
     dataset: 'production',
 
+    apiVersion: '2023-12-12',
+
     basePath:'/admin',
     plugins: [deskTool()],
 
@@ -19,4 +22,7 @@ const sanityConfig = defineConfig({
     }
 })
 
+
 export default sanityConfig
+type HomePageData = InferSchemaValues<typeof sanityConfig>
+export type Foo = HomePageData['default']['homepageData']

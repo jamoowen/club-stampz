@@ -1,7 +1,20 @@
 import Image from 'next/image'
 import '@radix-ui/themes/styles.css';
+import { getHomepageData } from '@/sanity/sanity-utils';
+import { InferSchemaValues } from '@sanity-typed/types';
+import homepageSchema from '@/sanity/schemas/homepage-schema';
+// import { HomePageData } from '@/sanity.config';
 
-export default function Home() {
+
+
+export default async function Home() {
+  const data = (await getHomepageData())[0]
+  
+
+  console.log(`data: ${JSON.stringify(data)}`)
+  console.log(`type: ${data['_type']}`)
+  console.log(`productText: ${data['productText']}`)
+  
   return (
     <main className="flex min-h-screen flex-col items-center">
 
@@ -14,7 +27,7 @@ export default function Home() {
         
         </div>
         <div className='col-span-3 text-xl items-center justify-center flex'>
-          Coming Soon
+          
         </div>
         
           
