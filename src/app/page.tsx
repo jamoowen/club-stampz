@@ -23,7 +23,7 @@ export default async function Home() {
 
       <div className='grid grid-cols-3 w-full  gap-1 '>
 
-        <div className='col-span-3 items-center flex justify-center '>
+        <div className='col-span-3 items-center w-full flex justify-center '>
           <div className='  w-full flex'>
             <div className='relative bg-blend-color items-center justify-center flex flex-col  opacity  h-screen p-5 grow '>
               <Image
@@ -47,18 +47,27 @@ export default async function Home() {
           </div>
         </div>
 
-        <div className='col-span-3 items-center  flex justify-center '>
+        <div className='col-span-3 items-center w-full flex justify-center '>
+          <div className='  w-full flex'>
+            <div className='relative bg-blend-color items-center justify-center flex flex-col  opacity  h-screen p-5 grow '>
+
+              <div className='flex h-min p-5 flex-col w-[300px] sm:w-[500px] sm:text-3xl  backdrop-brightness-50 justify-center items-center text-center text-xl '>
+                {data.aboutText}
+
+               <Button>
+                <Link href="/about" >
+                About Us
+                </Link>
+                
+               </Button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+
         
-          {data.productImage}
-
-
-        </div>
-        <div className='col-span-3 items-center flex justify-center '>
-
-          {data.aboutText}
-
-
-        </div>
 
       </div>
 
