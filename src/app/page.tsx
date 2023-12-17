@@ -3,35 +3,65 @@ import '@radix-ui/themes/styles.css';
 import { getHomepageData } from '@/sanity/sanity-utils';
 import { InferSchemaValues } from '@sanity-typed/types';
 import homepageSchema from '@/sanity/schemas/homepage-schema';
+import { HomePageData } from '@/types/sanity-types';
+import VideoPlayer from '@/components/VideoPlayer';
 // import { HomePageData } from '@/sanity.config';
 
 
 
 export default async function Home() {
-  const data = (await getHomepageData())[0]
-  
+  const data: HomePageData = (await getHomepageData())[0]
 
-  console.log(`data: ${JSON.stringify(data)}`)
-  console.log(`type: ${data['_type']}`)
-  console.log(`productText: ${data['productText']}`)
-  
+
+
   return (
-    <main className="flex min-h-screen flex-col items-center">
+    <main className="h-full flex flex-col min-h-screen ">
 
 
-      
-      <div className='grid grid-cols-3 gap-4 w-full  rounded-md mt-20 text-white' >
-        <div className='col-span-3 items-center sm:mt-10 flex justify-center '>
-        <h1 className='text-3xl sm:text-5xl'>Club Stamps</h1>
+      <div className='grid grid-cols-3 w-full  gap-1 '>
 
+        <div className='col-span-3 items-center flex justify-center '>
+          <div className=' shadow-black shadow-inner w-full flex'>
+            <div className='relative bg-blend-color items-center justify-center flex flex-col  opacity  h-screen p-5 grow '>
+              <Image
+                alt='image'
+                fill
+                src={data.heroImage}
+                className='object-cover opacity-90 -z-10 back shadow-white'
+              />
+              <div className=' flex h-min p-5 flex-col w-[500px]  backdrop-brightness-50 justify-center items-center text-center text-3xl '>
+                {data.productText}
+
+                <button className='p-2 rounded-sm text-underlineColor text-md border-underlineColor border'>
+                  View options
+                </button>
+                
+              </div>
         
+       
+            </div>
+
+          </div>
+
+
+
         </div>
-        <div className='col-span-3 text-xl items-center justify-center flex'>
-          
+
+        <div className='col-span-3 items-center  shadow-black shadow-inner flex justify-center '>
+
+          {data.productImage}
+
+
         </div>
-        
-          
+        <div className='col-span-3 items-center  shadow-black shadow-inner flex justify-center '>
+
+          {data.aboutText}
+
+
+        </div>
+
       </div>
+
     </main>
   )
 }

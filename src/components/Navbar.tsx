@@ -16,19 +16,19 @@ interface NavbarProps {
 const navbarLinks = {
     products: {
         name: 'Products',
-        link: '/'
+        link: '/products'
     },
     about: {
         name: 'About',
-        link: '/'
+        link: '/about'
     },
     pricing: {
         name: 'Pricing',
-        link: '/'
+        link: '/pricing'
     },
     contact: {
         name: 'Contact',
-        link: '/'
+        link: '/contact'
     },
     admin: {
         name: 'Admin',

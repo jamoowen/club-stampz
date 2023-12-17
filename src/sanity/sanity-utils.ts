@@ -1,8 +1,12 @@
-import { HomePageData } from "@/sanity.config";
+
 import { InferSchemaValues } from "@sanity-typed/types";
 import { createClient, groq } from "next-sanity";
 
 const sanityProjectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
+
+// Nextjs is caching the sanity fetch request
+// Ive tried adding revalidate:  { next: { revalidate: 10 } } to the fetch request but only works once then reverts if i change the value
+
 
 
 export async function getHomepageData() {
@@ -19,10 +23,10 @@ export async function getHomepageData() {
                 _id,
                 _createdAt,
                 productText,
-                heroImage,
                 aboutText,
-                productImage,
-                aboutImage
+                "heroImage": heroImage.asset->url,
+                "productImage": productImage.asset->url,
+                "aboutImage": aboutImage.asset->url
             }`
         )
         return data

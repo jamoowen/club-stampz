@@ -15,7 +15,12 @@ const config: Config = {
       },
       fontFamily: {
         'playfair': ["var(--font-playfair)"],
+        'pt-serif': ["var(--font-pt-serif)"],
+        'heading': ["var(--font-playfair)"],
+        'robot-slab': ["var(--font-roboto-slab)"],
+
       }
+
     },
   },
   plugins: [],

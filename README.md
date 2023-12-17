@@ -1,3 +1,3 @@
 Website for Club-Stampz
 
-Typescript, NextJS, Sanity, Lucide-icons, radixui
+Typescript, NextJS, Sanity, Lucide-icons, radixui, next-video

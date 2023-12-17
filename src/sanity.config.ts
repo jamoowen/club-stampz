@@ -24,5 +24,3 @@ const sanityConfig = defineConfig({
 
 
 export default sanityConfig
-type HomePageData = InferSchemaValues<typeof sanityConfig>
-export type Foo = HomePageData['default']['homepageData']
