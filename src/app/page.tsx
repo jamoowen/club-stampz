@@ -24,15 +24,15 @@ export default async function Home() {
       <div className='grid grid-cols-3 w-full  gap-1 '>
 
         <div className='col-span-3 items-center flex justify-center '>
-          <div className=' shadow-black shadow-inner w-full flex'>
+          <div className='  w-full flex'>
             <div className='relative bg-blend-color items-center justify-center flex flex-col  opacity  h-screen p-5 grow '>
               <Image
                 alt='image'
                 fill
                 src={data.heroImage}
-                className='object-cover opacity-90 -z-10 back shadow-white'
+                className='object-cover opacity-90 -z-10 '
               />
-              <div className=' flex h-min p-5 flex-col w-[500px]  backdrop-brightness-50 justify-center items-center text-center text-3xl '>
+              <div className=' flex h-min p-5 flex-col w-[300px] sm:w-[500px] sm:text-3xl  backdrop-brightness-50 justify-center items-center text-center text-xl '>
                 {data.productText}
 
                <Button>
