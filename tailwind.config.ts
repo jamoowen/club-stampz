@@ -10,8 +10,9 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        gold: '#FFD700',
-        underlineColor: '#FFD700',
+        brightGold: '#FFD700',
+        gold: '#D4AF37',
+        underlineColor: '#D4AF37',
       },
       fontFamily: {
         'playfair': ["var(--font-playfair)"],

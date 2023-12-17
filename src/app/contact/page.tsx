@@ -5,7 +5,12 @@ interface pageProps {
 }
 
 const page: FC<pageProps> = ({}) => {
-  return <div>Contact</div>
+  return (
+    <main className="h-full flex flex-col min-h-screen ">
+
+      
+    </main>
+  )
 }
 
 export default page

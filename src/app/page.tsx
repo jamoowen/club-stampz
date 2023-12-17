@@ -5,6 +5,9 @@ import { InferSchemaValues } from '@sanity-typed/types';
 import homepageSchema from '@/sanity/schemas/homepage-schema';
 import { HomePageData } from '@/types/sanity-types';
 import VideoPlayer from '@/components/VideoPlayer';
+import Button from '@/components/Button';
+import Link from 'next/link';
+
 // import { HomePageData } from '@/sanity.config';
 
 
@@ -32,28 +35,25 @@ export default async function Home() {
               <div className=' flex h-min p-5 flex-col w-[500px]  backdrop-brightness-50 justify-center items-center text-center text-3xl '>
                 {data.productText}
 
-                <button className='p-2 rounded-sm text-underlineColor text-md border-underlineColor border'>
-                  View options
-                </button>
+               <Button>
+                <Link href="/products" >
+                View Options
+                </Link>
+                
+               </Button>
                 
               </div>
-        
-       
             </div>
-
           </div>
-
-
-
         </div>
 
-        <div className='col-span-3 items-center  shadow-black shadow-inner flex justify-center '>
-
+        <div className='col-span-3 items-center  flex justify-center '>
+        
           {data.productImage}
 
 
         </div>
-        <div className='col-span-3 items-center  shadow-black shadow-inner flex justify-center '>
+        <div className='col-span-3 items-center flex justify-center '>
 
           {data.aboutText}
 
