@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   description: 'Golf club customization',
 }
 
-export const revalidate = 30;
+export const revalidate = 20;
 
 
 export default function RootLayout({
@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${fontPlayFair.variable} ${fontPtSerif.variable} ${fontRobotoSlab.variable}`}>
 
-        <body className="bg-black min-h-screen w-full pt-20 text-white font-robot-slab">
+        <body className="bg-black min-h-screen w-full pt-10 text-white font-robot-slab">
           <Navbar />
           {children}
           <Footer />

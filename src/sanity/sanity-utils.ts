@@ -6,16 +6,15 @@ const sanityProjectId = process.env.NEXT_PUBLIC_SANITY_PROJECT_ID
 
 // Nextjs is caching the sanity fetch request
 // Ive tried adding revalidate:  { next: { revalidate: 10 } } to the fetch request but only works once then reverts if i change the value
+const client = createClient({
 
+    projectId: sanityProjectId!,
+    dataset: 'production',
+    apiVersion: '2023-12-12'
+});
 
 
 export async function getHomepageData() {
-    const client = createClient({
-
-        projectId: sanityProjectId!,
-        dataset: 'production',
-        apiVersion: '2023-12-12'
-    });
 
     try {
         const data = client.fetch(
@@ -33,7 +32,21 @@ export async function getHomepageData() {
     } catch (error) {
         console.log("ERROR fetching data from sanity", error)
     }
+}
 
+export async function getCarouselImages() {
+    
 
-
+    try {
+        const data = client.fetch(
+            groq`*[_type == "homePageCarousel"]{
+                _id,
+                _createdAt,
+                "imageUrls": carouselImages[].asset->url
+            }`
+        )
+        return data
+    } catch (error) {
+        console.log("ERROR fetching carousel images from sanity", error)
+    }
 }

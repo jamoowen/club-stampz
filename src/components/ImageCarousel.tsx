@@ -1,19 +1,23 @@
+'use client'
+import Image from 'next/image';
 import { FC } from 'react'
-import Carousel from 'react-multi-carousel'
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 
 interface ImageCarouselProps {
-    images: any
+    urls: string[]
 }
 
-const ImageCarousel: FC<ImageCarouselProps> = ({images}) => {
+const ImageCarousel: FC<ImageCarouselProps> = ({ urls }) => {
     return (
+
         <Carousel
             additionalTransfrom={0}
             arrows
             autoPlaySpeed={3000}
             centerMode={false}
             className=""
-            containerClass="container-with-dots"
+            containerClass="container"
             dotListClass=""
             draggable
             focusOnSelect={false}
@@ -21,6 +25,7 @@ const ImageCarousel: FC<ImageCarouselProps> = ({images}) => {
             itemClass=""
             keyBoardControl
             minimumTouchDrag={80}
+            partialVisible
             pauseOnHover
             renderArrowsWhenDisabled={false}
             renderButtonGroupOutside={false}
@@ -31,8 +36,8 @@ const ImageCarousel: FC<ImageCarouselProps> = ({images}) => {
                         max: 3000,
                         min: 1024
                     },
-                    items: 1,
-                    partialVisibilityGutter: 30
+                    items: 3,
+                    partialVisibilityGutter: 40
                 },
                 mobile: {
                     breakpoint: {
@@ -47,7 +52,7 @@ const ImageCarousel: FC<ImageCarouselProps> = ({images}) => {
                         max: 1024,
                         min: 464
                     },
-                    items: 1,
+                    items: 2,
                     partialVisibilityGutter: 30
                 }
             }}
@@ -60,8 +65,20 @@ const ImageCarousel: FC<ImageCarouselProps> = ({images}) => {
             slidesToSlide={1}
             swipeable
         >
-            {images}
+
+            {urls.map((url) => (
+                <div className='relative flex bg-red-300 w-24 h-24'>
+                    <Image
+                        src={url}
+                        alt='Customized, stamped golf wedge'
+                        fill
+                        className='object-cover'
+                    />
+                </div>
+
+            ))}
         </Carousel>
+
     )
 }
 
