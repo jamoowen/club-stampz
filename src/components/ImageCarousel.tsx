@@ -4,11 +4,17 @@ import { FC } from 'react'
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
+
+
 interface ImageCarouselProps {
     urls: string[]
 }
 
 const ImageCarousel: FC<ImageCarouselProps> = ({ urls }) => {
+
+
+
+
     return (
 
         <Carousel
@@ -25,7 +31,6 @@ const ImageCarousel: FC<ImageCarouselProps> = ({ urls }) => {
             itemClass=""
             keyBoardControl
             minimumTouchDrag={80}
-            partialVisible
             pauseOnHover
             renderArrowsWhenDisabled={false}
             renderButtonGroupOutside={false}
@@ -36,42 +41,40 @@ const ImageCarousel: FC<ImageCarouselProps> = ({ urls }) => {
                         max: 3000,
                         min: 1024
                     },
-                    items: 3,
-                    partialVisibilityGutter: 40
+                    items: 1
                 },
                 mobile: {
                     breakpoint: {
                         max: 464,
                         min: 0
                     },
-                    items: 1,
-                    partialVisibilityGutter: 30
+                    items: 1
                 },
                 tablet: {
                     breakpoint: {
                         max: 1024,
                         min: 464
                     },
-                    items: 2,
-                    partialVisibilityGutter: 30
+                    items: 1
                 }
             }}
             rewind={false}
             rewindWithAnimation={false}
             rtl={false}
             shouldResetAutoplay
-            showDots={false}
+            showDots
             sliderClass=""
             slidesToSlide={1}
             swipeable
         >
 
             {urls.map((url) => (
-                <div className='relative flex bg-red-300 w-24 h-24'>
+                <div key={url} className='w-10/12 mx-auto '>
                     <Image
                         src={url}
                         alt='Customized, stamped golf wedge'
-                        fill
+                        width={200}
+                        height={200}
                         className='object-cover'
                     />
                 </div>
