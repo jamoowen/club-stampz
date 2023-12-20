@@ -68,18 +68,24 @@ const ImageCarousel: FC<ImageCarouselProps> = ({ urls }) => {
             swipeable
         >
 
+
             {urls.map((url) => (
-                <div key={url} className='w-10/12 mx-auto '>
-                    <Image
-                        src={url}
-                        alt='Customized, stamped golf wedge'
-                        width={200}
-                        height={200}
-                        className='object-cover'
-                    />
+
+
+
+                <div key={url} className='shadow-white  shadow-inner relative h-[300px] sm:h-[400px] md:h-[500px] w-[300px] sm:w-[400px] md:w-[500px] flex bg-green-300 mx-auto '>
+                  
+                        <Image
+                            src={url}
+                            alt='Customized, stamped golf wedge'
+                            fill
+                            className='object-cover'
+                        />
+                  
                 </div>
 
             ))}
+
         </Carousel>
 
     )

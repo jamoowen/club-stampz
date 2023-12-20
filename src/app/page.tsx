@@ -51,18 +51,18 @@ export default async function Home() {
         </div>
         <div className='col-span-3 items-center w-full flex justify-center '>
 
-          <div className='relative bg-red-300 items-center justify-center flex flex-col w-full opacity p-5'>
+          <div className='relative items-center justify-center flex flex-col w-full opacity p-5'>
 
             <div className='flex h-min p-5 flex-col w-[300px] sm:w-[500px] sm:text-3xl backdrop-brightness-50 justify-center items-center text-center text-xl '>
               Customize your clubs with your name, initials or anything you want
 
             </div>
-            <div className='w-10/12 bg-gray-600  m-2 flex items-center justify-center '>
-            
+            <div className='w-9/12   m-2 flex items-center justify-center '>
+
               <ImageCarousel urls={carouselImages.imageUrls} />
 
-              
-     
+
+
             </div>
 
 
@@ -72,7 +72,12 @@ export default async function Home() {
         <div className='col-span-3 items-center w-full flex justify-center '>
           <div className='  w-full flex'>
             <div className='relative bg-blend-color items-center justify-center flex flex-col  opacity  h-screen p-5 grow '>
-
+              <Image
+                alt='image'
+                fill
+                src={data.aboutImage}
+                className='object-cover opacity-90 -z-10 '
+              />
               <div className='flex h-min p-5 flex-col w-[300px] sm:w-[500px] sm:text-3xl  backdrop-brightness-50 justify-center items-center text-center text-xl '>
                 {data.aboutText}
 

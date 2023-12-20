@@ -11,22 +11,22 @@ const Footer: FC<FooterProps> = ({ }) => {
     return (
         <div className='border-t bg-zinc-900 pt-10 px-2'>
             <div className='flex gap-2 items-center'>
-                <div className='font-semibold mr-5'>
+                <div className='font-semibold text-2xl mr-5'>
                     Contact us
                 </div>
 
-                <div className='rounded-full w-14 h-14  hover:border-underlineColor items-center justify-center flex border border-white'>
+                <div className='rounded-full w-12 h-12  hover:border-underlineColor items-center justify-center flex border border-white'>
                     <Link
                         href="/https://www.instagram.com/club_stamps_za/"
                         target='_blank'
                     >
-                        <Instagram className='w-[31px] h-[31px] hover:w-8 transition hover:h-8 ' />
+                        <Instagram className='w-[22px] h-[22px] hover:w-[24px] transition hover:h-[24px] ' />
                     </Link>
                 </div>
 
-                <div className='rounded-full w-14 h-14  hover:border-underlineColor flex items-center justify-center border border-white'>
+                <div className='rounded-full w-12 h-12  hover:border-underlineColor flex items-center justify-center border border-white'>
                     <Link href="/contact">
-                        <Mail className='w-[31px] h-[31px] hover:w-8 transition hover:h-8 ' />
+                        <Mail className='w-[22px] h-[22px] hover:w-[24px] transition hover:h-[24px] ' />
                     </Link>
                 </div>
              
