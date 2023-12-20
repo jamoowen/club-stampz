@@ -27,8 +27,11 @@ export default async function Home() {
       <div className='grid grid-cols-3  w-full  gap-1 '>
 
         <div className='col-span-3 items-center w-full flex justify-center '>
+
           <div className='  w-full flex'>
+
             <div className='relative bg-blend-color items-center justify-center flex flex-col  opacity  h-screen p-5 grow '>
+              <span className='text-5xl sm:text-7xl cursor-default hover:font-bold font-heading absolute top-10 text-white'>CLUB STAMPS</span>
               <Image
                 alt='image'
                 fill
@@ -71,7 +74,9 @@ export default async function Home() {
 
         <div className='col-span-3 items-center w-full flex justify-center '>
           <div className='  w-full flex'>
+
             <div className='relative bg-blend-color items-center justify-center flex flex-col  opacity  h-screen p-5 grow '>
+
               <Image
                 alt='image'
                 fill

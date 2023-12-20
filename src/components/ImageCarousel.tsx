@@ -73,7 +73,7 @@ const ImageCarousel: FC<ImageCarouselProps> = ({ urls }) => {
 
 
 
-                <div key={url} className='shadow-white  shadow-inner relative h-[300px] sm:h-[400px] md:h-[500px] w-[300px] sm:w-[400px] md:w-[500px] flex bg-green-300 mx-auto '>
+                <div key={url} className=' shadow-inner relative h-[300px] sm:h-[400px] md:h-[500px] w-[300px] sm:w-[400px] md:w-[500px] flex mx-auto '>
                   
                         <Image
                             src={url}

@@ -9,6 +9,9 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      cursor: {
+        golf: 'url(/images/logo.png), golf',
+      },
       colors: {
         brightGold: '#FFD700',
         gold: '#D4AF37',

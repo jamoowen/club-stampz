@@ -55,6 +55,8 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                     />
 
                 </Link>
+                
+                
 
                 <div className='ml-5 gap-5  text-slate-200  flex w-full'>
                     {
@@ -62,7 +64,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                             <Link
                                 key={key}
                                 href={value.link}
-                                className='hover:underline font-semibold leading-0 underline-offset-4 decoration-underlineColor'
+                                className='hover:underline hover:text-white font-semibold leading-0 underline-offset-4 decoration-underlineColor'
                                 
                             >
                                 {value.name}
@@ -154,7 +156,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                                                                     <Link
                                                                         key={key}
                                                                         href={value.link}
-                                                                        className='hover:underline flex justify-between w-full font-semibold underline-offset-4 decoration-underlineColor'
+                                                                        className='hover:underline hover:text-white flex justify-between w-full font-semibold underline-offset-4 decoration-underlineColor'
                                                                         onClick={()=>setOpen(false)}
                                                                     >
                                                                         {value.name}
