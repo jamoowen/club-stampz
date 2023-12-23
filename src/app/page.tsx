@@ -31,14 +31,14 @@ export default async function Home() {
           <div className='  w-full flex'>
 
             <div className='relative bg-blend-color items-center justify-center flex flex-col  opacity  h-screen p-5 grow '>
-              <span className='text-5xl sm:text-7xl cursor-default hover:font-bold font-heading absolute top-10 text-white'>CLUB STAMPS</span>
+              <span className='text-4xl sm:text-7xl cursor-default hover:font-bold font-heading absolute top-10 text-white'>CLUB STAMPS</span>
               <Image
                 alt='image'
                 fill
                 src={data.heroImage}
                 className='object-cover opacity-90 -z-10 '
               />
-              <div className=' flex h-min p-5 flex-col w-[300px] sm:w-[500px] sm:text-3xl  backdrop-brightness-50 justify-center items-center text-center text-xl '>
+              <div className=' flex h-min p-5 flex-col w-[250px] sm:w-[350px] md:w-[500px] sm:text-3xl  backdrop-brightness-50 justify-center items-center text-center text-xl '>
                 {data.productText}
 
                 <Button>
@@ -60,7 +60,7 @@ export default async function Home() {
               Customize your clubs with your name, initials or anything you want
 
             </div>
-            <div className='w-9/12   m-2 flex items-center justify-center '>
+            <div className='w-[99%] md:w-[80%] m-2 flex items-center justify-center '>
 
               <ImageCarousel urls={carouselImages.imageUrls} />
 
@@ -83,7 +83,7 @@ export default async function Home() {
                 src={data.aboutImage}
                 className='object-cover opacity-90 -z-10 '
               />
-              <div className='flex h-min p-5 flex-col w-[300px] sm:w-[500px] sm:text-3xl  backdrop-brightness-50 justify-center items-center text-center text-xl '>
+              <div className=' flex h-min p-5 flex-col w-[250px] sm:w-[350px] md:w-[500px] sm:text-3xl  backdrop-brightness-50 justify-center items-center text-center text-xl '>
                 {data.aboutText}
 
                 <Button>

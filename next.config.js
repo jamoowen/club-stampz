@@ -13,6 +13,16 @@ const nextConfig = {
                 hostname: "github.com",
                 port: "",
             },
+            {
+                protocol: "https",
+                hostname: "youtube.com",
+                port: "",
+            },
+            {
+                protocol: "https",
+                hostname: "instagram.com",
+                port: "",
+            },
           
             
 

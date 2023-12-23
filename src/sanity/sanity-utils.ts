@@ -50,3 +50,22 @@ export async function getCarouselImages() {
         console.log("ERROR fetching carousel images from sanity", error)
     }
 }
+
+export async function getProductPageData() {
+
+    try {
+        const data = client.fetch(
+            groq`*[_type == "productsData"]{
+                _id,
+                _createdAt,
+                stampingInfo,
+                "backgroundImage": backgroundImage.asset->url,
+                "myRichTextExample": myRichTextExample
+
+            }`
+        )
+        return data
+    } catch (error) {
+        console.log("ERROR fetching products data from sanity", error)
+    }
+}

@@ -9,7 +9,7 @@ interface FooterProps {
 
 const Footer: FC<FooterProps> = ({ }) => {
     return (
-        <div className='border-t bg-zinc-900 pt-10 px-2'>
+        <div className='border-t border-opacity-20 border-white bg-zinc-900 pt-10 px-2'>
             <div className='flex gap-2 items-center'>
                 <div className='font-semibold text-2xl mr-5'>
                     Contact us

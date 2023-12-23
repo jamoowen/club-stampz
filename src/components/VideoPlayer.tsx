@@ -1,21 +1,39 @@
 'use client'
-import { FC } from 'react'
-import ReactPlayer from 'react-player'
+import { FC, useState } from 'react'
+import ReactPlayer from 'react-player/youtube'
+import Button from './Button'
 
 interface VideoPlayerProps {
-  
+
 }
 
-const VideoPlayer: FC<VideoPlayerProps> = ({}) => {
+const VideoPlayer: FC<VideoPlayerProps> = ({ }) => {
+  const [play, setPlay] = useState(false)
+
+  const handlePlay = () => {
+    console.log(`Play: ${play}`)
+    setPlay(!play);
+
+  }
   return (
-    <div className=' relative '>
-        <div className=''> </div>
+    <div onClick={handlePlay} className='cursor-pointer relative  '>
+    
 
-
+      <div className='pointer-events-none bg-black md:w-[540px] w-[326px]'>
         <ReactPlayer
-         url= "https://b2sgxnt6vjn9idgw.public.blob.vercel-storage.com/stamping.mp4" 
-         playing={true}
-         />
+          url="https://youtu.be/4njYQzglF_g"
+          playing={play}
+          muted={false}
+          playIcon={<Button className='z-30' onClick={() => setPlay(!play)}> PLAYMEEEEEE</Button>}
+          width='auto'
+
+       
+
+    
+
+        />
+      </div>
+
 
     </div>
   )

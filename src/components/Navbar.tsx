@@ -43,7 +43,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
 
 
     return (
-        <nav className="fixed  top-0 left-0 mr-5 font-semibold items-center bg-black z-10 flex flex-row w-full text-white shrink-0 bg-background">
+        <nav className="fixed z-50 top-0 left-0 mr-5 font-semibold items-center bg-black flex flex-row w-full text-white shrink-0 bg-background">
 
             <div className='hidden px-2 sm:flex  items-center sm:pt-10 flex-row'>
                 <Link href="/" className=''>
@@ -52,6 +52,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                         height={30}
                         alt='Club Stamps logo'
                         src='/images/logo.png'
+                        className='rounded-full bg-white p-[0.01px]'
                     />
 
                 </Link>
@@ -91,6 +92,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                                 height={30}
                                 alt='Club Stamps logo'
                                 src='/images/logo.png'
+                                className='rounded-full bg-white p-[0.01px]'
                             />
 
                         </Link>

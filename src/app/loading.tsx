@@ -7,9 +7,11 @@ interface loadingProps {
 
 const loading: FC<loadingProps> = ({ }) => {
     return (
-    <div>
-        <Loader2 className='animate-spin' />
-    </div>
+        <main className="h-full flex items-center flex-col overflow-hidden min-h-screen ">
+            <div>
+                <Loader2 className='text-4xl animate-spin' />
+            </div>
+        </main>
     )
 }
 
