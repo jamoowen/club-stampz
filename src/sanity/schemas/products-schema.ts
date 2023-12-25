@@ -14,13 +14,8 @@ const productsSchema: DocumentDefinition = {
 
         },
         {
-            name: "stampingInfo",
-            title: "Description of stamping process",
-            type: "text",
-        },
-        {
-            title: 'Rich text example',
-            name: 'myRichTextExample',
+            title: 'Customization details',
+            name: 'customizationDetails',
             type: 'array',
             of: [
                 {

@@ -13,7 +13,6 @@ export type HomePageData = {
 export type productPageData = {
     _id: string
     _createdAt: Date
-    stampingInfo: string
     backgroundImage: string
-    myRichTextExample: PortableTextBlock[];
+    customizationDetails: PortableTextBlock[];
 }

@@ -19,7 +19,7 @@ const VideoPlayer: FC<VideoPlayerProps> = ({ }) => {
     <div onClick={handlePlay} className='cursor-pointer relative  '>
     
 
-      <div className='pointer-events-none bg-black md:w-[540px] w-[326px]'>
+      <div className='pointer-events-none rounded-sm bg-black p-1 md:w-[540px] w-[326px]'>
         <ReactPlayer
           url="https://youtu.be/4njYQzglF_g"
           playing={play}

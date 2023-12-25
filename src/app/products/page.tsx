@@ -11,38 +11,52 @@ interface pageProps {
 
 const page: FC<pageProps> = async ({ }) => {
   const data: productPageData = (await getProductPageData())[0]
-  const richText = data.myRichTextExample
+  const richText = data.customizationDetails
 
   const components: PortableTextComponents = {
+    list: {
+      // Ex. 1: customizing common list types
+      bullet: ({children}) => <ul className="mt-xl">{children}</ul>,
+      number: ({children}) => <ol className="list-decimal">{children}</ol>,
+  
+      // Ex. 2: rendering custom lists
+      checkmarks: ({children}) => <ol className="m-auto text-lg">{children}</ol>,
+    },
+  
     listItem: {
       // Ex. 1: customizing common list types
       bullet: ({ children }) => <li style={{ listStyleType: 'disclosure-closed' }}>{children}</li>,
+      number: ({children}) => <li >{children}</li>,
+
 
       // Ex. 2: rendering custom list items
-      checkmarks: ({ children }) => <li>✅ {children}</li>,
+      // checkmarks: ({ children }) => <li>✅ {children}</li>,
     },
   }
 
 
 
-  console.log(`block data: ${JSON.stringify(richText)}`)
-
-
   return (
-    <main className="h-full flex py-10 flex-col overflow-hidden min-h-screen ">
-      <Image
-        alt='image'
-        fill
-        src={data.backgroundImage}
-        className='object-cover opacity-90 blur-sm -z-10 '
-      />
+    <main className="h-full flex mt-5 flex-col overflow-hidden min-h-screen ">
 
-      <div className='flex flex-col  items-center'>
-        <div className='flex h-min p-5 flex-col backdrop-brightness-50 rounded-md md:w-[540px] my-5 w-[326px] '>
+
+      <div className='flex flex-col relative items-center'>
+        <Image
+          alt='image'
+          fill
+          src={data.backgroundImage}
+          className='object-cover opacity-90 blur-sm -z-10 '
+        />
+        <div className='flex h-min sm:text-lg text-sm ps-10 pe-5 py-5 flex-col backdrop-brightness-50 rounded-sm md:w-[750px] sm:w-[500px] lg:w-[900px] my-5 w-[326px] '>
           <h2 className='font-semibold mb-2 text-2xl'>Wedge Stamping</h2>
-          <PortableText value={data.myRichTextExample} components={components} />
+          <PortableText value={data.customizationDetails} components={components} />
+
+
         </div>
-        <VideoPlayer />
+        <div className=' w-full py-5 flex justify-center'>
+          <VideoPlayer />
+        </div>
+
 
 
 

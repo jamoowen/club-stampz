@@ -58,9 +58,8 @@ export async function getProductPageData() {
             groq`*[_type == "productsData"]{
                 _id,
                 _createdAt,
-                stampingInfo,
                 "backgroundImage": backgroundImage.asset->url,
-                "myRichTextExample": myRichTextExample
+                "customizationDetails": customizationDetails
 
             }`
         )
