@@ -12,8 +12,12 @@ interface pageProps {
 const page: FC<pageProps> = async ({ }) => {
   const data: productPageData = (await getProductPageData())[0]
   const richText = data.customizationDetails
+  console.log(`richtext: ${JSON.stringify(richText)}`)
 
   const components: PortableTextComponents = {
+    // hardBreak: {
+
+    // },
     list: {
       // Ex. 1: customizing common list types
       bullet: ({children}) => <ul className="mt-xl">{children}</ul>,
@@ -47,8 +51,8 @@ const page: FC<pageProps> = async ({ }) => {
           src={data.backgroundImage}
           className='object-cover opacity-90 blur-sm -z-10 '
         />
-        <div className='flex h-min sm:text-lg text-sm ps-10 pe-5 py-5 flex-col backdrop-brightness-50 rounded-sm md:w-[750px] sm:w-[500px] lg:w-[900px] my-5 w-[326px] '>
-          <h2 className='font-semibold mb-2 text-2xl'>Wedge Stamping</h2>
+        <div className='flex h-min sm:text-lg whitespace-pre-line text-sm ps-10 pe-5 py-5 flex-col backdrop-brightness-50 rounded-sm md:w-[750px] sm:w-[500px] lg:w-[900px] my-5 w-[326px] '>
+          <h2 className='font-semibold pb-5 text-2xl'>Wedge Stamping</h2>
           <PortableText value={data.customizationDetails} components={components} />
 
 
