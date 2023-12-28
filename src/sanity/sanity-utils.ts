@@ -68,3 +68,20 @@ export async function getProductPageData() {
         console.log("ERROR fetching products data from sanity", error)
     }
 }
+export async function getAboutPageData() {
+
+    try {
+        const data = client.fetch(
+            groq`*[_type == "aboutData"]{
+                _id,
+                _createdAt,
+                "backgroundImage": backgroundImage.asset->url,
+                "aboutDetails": aboutDetails
+
+            }`
+        )
+        return data
+    } catch (error) {
+        console.log("ERROR fetching about data from sanity", error)
+    }
+}

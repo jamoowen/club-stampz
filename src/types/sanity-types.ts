@@ -16,3 +16,9 @@ export type productPageData = {
     backgroundImage: string
     customizationDetails: PortableTextBlock[];
 }
+export type aboutPageData = {
+    _id: string
+    _createdAt: Date
+    backgroundImage: string
+    aboutDetails: PortableTextBlock[];
+}

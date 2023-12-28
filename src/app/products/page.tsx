@@ -1,3 +1,4 @@
+import ContactForm from '@/components/ContactForm'
 import VideoPlayer from '@/components/VideoPlayer'
 import { getProductPageData } from '@/sanity/sanity-utils'
 import { productPageData } from '@/types/sanity-types'
@@ -20,17 +21,17 @@ const page: FC<pageProps> = async ({ }) => {
     // },
     list: {
       // Ex. 1: customizing common list types
-      bullet: ({children}) => <ul className="mt-xl">{children}</ul>,
-      number: ({children}) => <ol className="list-decimal">{children}</ol>,
-  
+      bullet: ({ children }) => <ul className="mt-xl">{children}</ul>,
+      number: ({ children }) => <ol className="list-decimal">{children}</ol>,
+
       // Ex. 2: rendering custom lists
-      checkmarks: ({children}) => <ol className="m-auto text-lg">{children}</ol>,
+      checkmarks: ({ children }) => <ol className="m-auto text-lg">{children}</ol>,
     },
-  
+
     listItem: {
       // Ex. 1: customizing common list types
       bullet: ({ children }) => <li style={{ listStyleType: 'disclosure-closed' }}>{children}</li>,
-      number: ({children}) => <li >{children}</li>,
+      number: ({ children }) => <li >{children}</li>,
 
 
       // Ex. 2: rendering custom list items
@@ -57,9 +58,13 @@ const page: FC<pageProps> = async ({ }) => {
 
 
         </div>
+        <div className='flex text-black h-min sm:text-lg whitespace-pre-line text-sm ps-10 pe-5 py-5 flex-col backdrop-brightness-50 rounded-sm md:w-[750px] sm:w-[500px] lg:w-[900px] my-5 w-[326px] '>
+          <ContactForm />
+        </div>
         <div className=' w-full py-5 flex justify-center'>
           <VideoPlayer />
         </div>
+
 
 
 

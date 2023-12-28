@@ -1,5 +1,7 @@
 // import '@radix-ui/themes/styles.css';
 import type { Config } from 'tailwindcss'
+import { blackA, violet, mauve } from '@radix-ui/colors'
+
 
 const config: Config = {
   content: [
@@ -16,6 +18,9 @@ const config: Config = {
         brightGold: '#FFD700',
         gold: '#D4AF37',
         underlineColor: '#D4AF37',
+        ...blackA,
+        ...violet,
+        ...mauve,
       },
       fontFamily: {
         'playfair': ["var(--font-playfair)"],
