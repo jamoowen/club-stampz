@@ -35,7 +35,7 @@ const defaultButton = 'p-2 gap-1 rounded-sm text-lg  w-32 shrink-0 h-auto flex f
 
 const Button: FC<ButtonProps> = ({ className, children, isLoading }) => {
     return (
-        <button disabled={isLoading} className= {defaultButton}>
+        <button disabled={isLoading} className= {cn(defaultButton, className)}>
               {isLoading ? <Loader2 className=" h-4 s-4 animate-spin" /> : children}
             
         </button>

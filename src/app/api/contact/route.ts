@@ -34,9 +34,9 @@ export async function POST(request: NextRequest) {
             from: username,
             to: targetEmail,
             replyTo: email,
-            subject: `CLUB STAMPS: ${email}`,
+            subject: `Club Stamps Customization Inquiry: ${email}`,
             html: `
-            <p>Inquiry from ${name} (${email}) </p>
+            <p>Inquiry from: ${name} (${email}) </p>
             <p>${message} </p>
             `,
         })
