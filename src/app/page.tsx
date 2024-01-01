@@ -38,7 +38,7 @@ export default async function Home() {
                 src={data.heroImage}
                 className='object-cover opacity-90 -z-10 '
               />
-              <div className=' flex h-min p-5 flex-col w-[250px] sm:w-[350px] md:w-[500px] sm:text-3xl  backdrop-brightness-50 justify-center items-center text-center text-xl '>
+              <div className=' flex h-min p-5 gap-5 flex-col w-[250px] sm:w-[350px] md:w-[500px] sm:text-3xl  backdrop-brightness-50 justify-center items-center text-center text-xl '>
                 {data.productText}
 
                 <Button>
@@ -83,7 +83,7 @@ export default async function Home() {
                 src={data.aboutImage}
                 className='object-cover opacity-90 -z-10 '
               />
-              <div className=' flex h-min p-5 flex-col w-[250px] sm:w-[350px] md:w-[500px] sm:text-3xl  backdrop-brightness-50 justify-center items-center text-center text-xl '>
+              <div className=' flex h-min p-5 gap-5 flex-col w-[250px] sm:w-[350px] md:w-[500px] sm:text-3xl  backdrop-brightness-50 justify-center items-center text-center text-xl '>
                 {data.aboutText}
 
                 <Button>

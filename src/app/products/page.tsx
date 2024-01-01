@@ -13,7 +13,7 @@ interface pageProps {
 const page: FC<pageProps> = async ({ }) => {
   const data: productPageData = (await getProductPageData())[0]
   const richText = data.customizationDetails
-  console.log(`richtext: ${JSON.stringify(richText)}`)
+  // console.log(`richtext: ${JSON.stringify(richText)}`)
 
   const components: PortableTextComponents = {
     // hardBreak: {

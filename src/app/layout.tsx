@@ -5,6 +5,8 @@ import './theme-config.css'
 import Navbar from '@/components/Navbar'
 import { Theme } from '@radix-ui/themes';
 import Footer from '@/components/Footer'
+import { Toaster } from "@/components/ui/toaster"
+
 // import '@radix-ui/themes/styles.css';
 
 
@@ -32,6 +34,7 @@ export default function RootLayout({
         <body className="bg-black min-h-screen w-full pt-10 text-white font-robot-slab">
           <Navbar />
           {children}
+          <Toaster />
           <Footer />
           </body>
       

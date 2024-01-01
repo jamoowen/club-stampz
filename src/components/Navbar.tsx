@@ -45,7 +45,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
     return (
         <nav className="fixed z-50 top-0 left-0 mr-5 font-semibold items-center bg-black flex flex-row w-full text-white shrink-0 bg-background">
 
-            <div className='hidden px-2 sm:flex  items-center sm:pt-10 flex-row'>
+            <div className='hidden px-2 py-1 sm:flex  items-center sm:pt-10 flex-row'>
                 <Link href="/" className=''>
                     <Image
                         width={30}
