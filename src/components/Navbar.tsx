@@ -43,7 +43,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
 
 
     return (
-        <nav className="fixed z-50 top-0 left-0 mr-5 font-semibold items-center bg-black flex flex-row w-full text-white shrink-0 bg-background">
+        <nav className="fixed z-30 top-0 left-0 mr-5 font-semibold items-center bg-black flex flex-row w-full text-white shrink-0 bg-background">
 
             <div className='hidden px-2 py-1 sm:flex  items-center sm:pt-10 flex-row'>
                 <Link href="/" className=''>
@@ -75,11 +75,12 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                 </div>
 
             </div>
-            <div className='w-full px-2  sm:hidden'>
-                <div className='grid w-full grid-cols-3  relative py-4 items-center'>
+            <div className='w-full z-50 px-2 sm:hidden'>
+                <div className='grid w-full grid-cols-3 z-10 relative py-4 items-center'>
                     <div className='col-span-1 flex items-center'>
-                    <button hidden={open} className=' ' onClick={() => setOpen((x) => !x)}>
-                            <Menu />
+
+                    <button className=' ' onClick={() => setOpen((x) => !x)}>
+                           {!open?<Menu /> :<X/>} 
                         </button>
                     </div>
                 
@@ -115,7 +116,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
 
                         <div className="fixed inset-0 overflow-hidden">
                             <div className="absolute inset-0 overflow-hidden">
-                                <div className="pointer-events-none fixed inset-y-0 right-0 flex max-w-full pl-10">
+                                <div className="pointer-events-none fixed inset-y-0 z-50 right-0 flex max-w-full pl-10">
                                     <Transition.Child
                                         as={Fragment}
                                         enter="transform transition ease-in-out duration-500 sm:duration-700"
@@ -148,13 +149,13 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                                                 </div>
                                             </Transition.Child>
                                             <div className="flex  h-full flex-col overflow-y-scroll bg-black text-white  shadow-xl">
-                                                <div className="flex flex-col">
+                                                <div className="flex mt-14 flex-col">
                                                     
                                                     <ul>
                                                         
                                                         {
                                                             Object.entries(navbarLinks).map(([key, value]) => (
-                                                                <li key={value.name} className='w-full flex flex-row border-y py-5 px-2 border-gray-500'>
+                                                                <li key={value.name} className='w-full flex flex-row border-b py-5 px-2 border-gray-500'>
                                                                     <Link
                                                                         key={key}
                                                                         href={value.link}
@@ -170,7 +171,7 @@ const Navbar: FC<NavbarProps> = ({ }) => {
                                                         }
                                                     </ul>
                                                 </div>
-                                                <div className="relative mt-6 flex-1 px-4 sm:px-6">{/* Your content */}</div>
+                                                <div className="relative mt-6 flex-1 px-4 sm:px-6"></div>
                                             </div>
                                         </Dialog.Panel>
                                     </Transition.Child>

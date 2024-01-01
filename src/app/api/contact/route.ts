@@ -36,9 +36,8 @@ export async function POST(request: NextRequest) {
             replyTo: email,
             subject: `CLUB STAMPS: ${email}`,
             html: `
-            <p>Name: ${name} </p>
-            <p>Email: ${email} </p>
-            <p>Message: ${message} </p>
+            <p>Inquiry from ${name} (${email}) </p>
+            <p>${message} </p>
             `,
         })
 

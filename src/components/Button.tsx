@@ -31,7 +31,7 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     isLoading?: boolean
 }
 
-const defaultButton = 'p-2 gap-1 rounded-sm text-lg  w-24 shrink-0 h-8 flex flex-row items-center justify-center hover:text-red-600 transition-all hover:border-red-600  text-underlineColor border-underlineColor border'
+const defaultButton = 'p-2 gap-1 rounded-sm text-lg  w-32 shrink-0 h-auto flex flex-row items-center justify-center hover:text-red-600 transition-all hover:border-red-600  text-underlineColor border-underlineColor border'
 
 const Button: FC<ButtonProps> = ({ className, children, isLoading }) => {
     return (

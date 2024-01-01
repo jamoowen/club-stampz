@@ -1,3 +1,4 @@
+import BackgroundDiv from '@/components/BackgroundDiv'
 import ContactForm from '@/components/ContactForm'
 import VideoPlayer from '@/components/VideoPlayer'
 import { getProductPageData } from '@/sanity/sanity-utils'
@@ -52,15 +53,16 @@ const page: FC<pageProps> = async ({ }) => {
           src={data.backgroundImage}
           className='object-cover opacity-90 blur-sm -z-10 '
         />
-        <div className='flex h-min sm:text-lg whitespace-pre-line text-sm ps-10 pe-5 py-5 flex-col backdrop-brightness-50 rounded-sm md:w-[750px] sm:w-[500px] lg:w-[900px] my-5 w-[326px] '>
+        <BackgroundDiv>
           <h2 className='font-semibold pb-5 text-2xl'>Wedge Stamping</h2>
           <PortableText value={data.customizationDetails} components={components} />
+        </BackgroundDiv>
 
-
-        </div>
-        <div className='flex text-black h-min sm:text-lg whitespace-pre-line text-sm ps-10 pe-5 py-5 flex-col backdrop-brightness-50 rounded-sm md:w-[750px] sm:w-[500px] lg:w-[900px] my-5 w-[326px] '>
+        <BackgroundDiv>
           <ContactForm />
-        </div>
+        </BackgroundDiv>
+
+
         <div className=' w-full py-5 flex justify-center'>
           <VideoPlayer />
         </div>

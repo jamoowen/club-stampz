@@ -1,3 +1,4 @@
+import BackgroundDiv from '@/components/BackgroundDiv'
 import InstagramEmbed from '@/components/InstagramEmbed'
 import VideoPlayer from '@/components/VideoPlayer'
 import { getAboutPageData, getProductPageData } from '@/sanity/sanity-utils'
@@ -13,7 +14,7 @@ interface pageProps {
 const page: FC<pageProps> = async ({ }) => {
   const data: aboutPageData = (await getAboutPageData())[0]
 
-  
+
 
   const components: PortableTextComponents = {
     // hardBreak: {
@@ -21,17 +22,17 @@ const page: FC<pageProps> = async ({ }) => {
     // },
     list: {
       // Ex. 1: customizing common list types
-      bullet: ({children}) => <ul className="mt-xl">{children}</ul>,
-      number: ({children}) => <ol className="list-decimal">{children}</ol>,
-  
+      bullet: ({ children }) => <ul className="mt-xl">{children}</ul>,
+      number: ({ children }) => <ol className="list-decimal">{children}</ol>,
+
       // Ex. 2: rendering custom lists
-      checkmarks: ({children}) => <ol className="m-auto text-lg">{children}</ol>,
+      checkmarks: ({ children }) => <ol className="m-auto text-lg">{children}</ol>,
     },
-  
+
     listItem: {
       // Ex. 1: customizing common list types
       bullet: ({ children }) => <li style={{ listStyleType: 'disclosure-closed' }}>{children}</li>,
-      number: ({children}) => <li >{children}</li>,
+      number: ({ children }) => <li >{children}</li>,
 
 
       // Ex. 2: rendering custom list items
@@ -52,12 +53,14 @@ const page: FC<pageProps> = async ({ }) => {
           src={data.backgroundImage}
           className='object-cover opacity-90 blur-sm -z-10 '
         />
-        <div className='flex h-min sm:text-lg whitespace-pre-line text-sm ps-10 pe-5 py-5 flex-col backdrop-brightness-50 rounded-sm md:w-[750px] sm:w-[500px] lg:w-[900px] my-5 w-[326px] '>
+        <BackgroundDiv>
           <h2 className='font-semibold pb-5 text-2xl'>Our Story</h2>
           <PortableText value={data.aboutDetails} components={components} />
 
+        </BackgroundDiv>
 
-        </div>
+
+
         <div className=' w-full py-5 flex justify-center'>
           <InstagramEmbed />
         </div>
