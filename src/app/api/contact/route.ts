@@ -11,6 +11,7 @@ export async function POST(request: NextRequest) {
     const data = await request.json()
     const name = data.name;
     const email = data.email;
+    const subject = data.subject;
     const message = data.message;
 
     const transporter = nodemailer.createTransport({
@@ -34,7 +35,7 @@ export async function POST(request: NextRequest) {
             from: username,
             to: targetEmail,
             replyTo: email,
-            subject: `Club Stamps Customization Inquiry: ${email}`,
+            subject: `Club Stamps - ${subject}: ${email}`,
             html: `
             <p>Inquiry from: ${name} (${email}) </p>
             <p>${message} </p>

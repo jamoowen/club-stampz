@@ -27,7 +27,12 @@ import {
 
 
 const axios = require('axios').default;
+
+
+
+
 import { AxiosError } from 'axios';
+import { useRouter } from 'next/navigation';
 
 const formSchema = z.object({
     subject: z.enum(["Stamping Inquiry", "General Inquiry", "Help"], {
@@ -40,19 +45,16 @@ const formSchema = z.object({
 })
 
 
-
-
-
-
 interface ContactFormProps {
 
 }
 
 const ContactForm: FC<ContactFormProps> = ({ }) => {
+    const router = useRouter()
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
-            subject: "General Inquiry",
+            subject: "Stamping Inquiry",
             email: "",
             name: "",
             message: "",
@@ -63,25 +65,30 @@ const ContactForm: FC<ContactFormProps> = ({ }) => {
     const [loading, setLoading] = useState(false)
 
     const submitForm = async (values: z.infer<typeof formSchema>) => {
+        
         setLoading(true)
         console.log(`submitting: ${values}, ${values.subject}, ${values.email}`)
 
         try {
-            // const { data } = await axios.post('/api/contact', {
-            //     name: values.name,
-            //     email: values.email,
-            //     message: values.message
-            // }, {
-            //     headers: {
-            //         'Content-Type': 'application/json'
-            //     }
-            // });
+            
+            const { data } = await axios.post('/api/contact', {
+                name: values.name,
+                email: values.email,
+                subject: values.subject,
+                message: values.message
+            }, {
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            });
 
             toast({
                 title: "Email sent!",
                 description: "We'll respond to you as soon as possible!",
             })
+            
         } catch (error) {
+            console.log(error)
             const axiosError = error as AxiosError;
             console.error(axiosError.response?.data);
             toast({
@@ -91,6 +98,10 @@ const ContactForm: FC<ContactFormProps> = ({ }) => {
             })
         } finally {
             setLoading(false);
+            setTimeout(() => {
+                router.push('/')    
+            }, 2000);
+        
         }
 
 
@@ -178,7 +189,7 @@ const ContactForm: FC<ContactFormProps> = ({ }) => {
                             <FormControl>
                                 <Textarea
                                     className="placeholder:text-opacity-10 h-48 sm:h-32 text-black"
-                                    placeholder="Hi James! I just had a look through your portfolio, and wanted to reach out..."
+                                    placeholder="..."
                                     {...field}
 
                                 />
@@ -189,7 +200,7 @@ const ContactForm: FC<ContactFormProps> = ({ }) => {
                     )}
                 />
 
-                <Button className="mt-5" type="submit">
+                <Button isLoading={loading} className="mt-5" type="submit">
                     Submit
                 </Button>
 
