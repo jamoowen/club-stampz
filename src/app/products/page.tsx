@@ -6,6 +6,7 @@ import { productPageData } from '@/types/sanity-types'
 import { PortableText, PortableTextComponents } from '@portabletext/react'
 import Image from 'next/image'
 import { FC } from 'react'
+import ContactComponent from './ContactComponent'
 
 interface pageProps {
 
@@ -40,7 +41,7 @@ const page: FC<pageProps> = async ({ }) => {
     },
   }
 
-
+  
 
   return (
     <main className="h-full flex mt-5 flex-col overflow-hidden min-h-screen ">
@@ -58,9 +59,11 @@ const page: FC<pageProps> = async ({ }) => {
           <PortableText value={data.customizationDetails} components={components} />
         </BackgroundDiv>
 
-        <BackgroundDiv>
-          <ContactForm />
-        </BackgroundDiv>
+        
+
+          <ContactComponent/>
+     
+        
 
 
         <div className=' w-full py-5 flex justify-center'>

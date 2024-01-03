@@ -33,11 +33,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 
 const defaultButton = 'p-2 gap-1 rounded-sm text-lg  w-32 shrink-0 h-auto flex flex-row items-center justify-center hover:text-red-600 transition-all hover:border-red-600  text-underlineColor border-underlineColor border'
 
-const Button: FC<ButtonProps> = ({ className, children, isLoading }) => {
+const Button: FC<ButtonProps> = ({ className, children, isLoading, ...props }) => {
     return (
-        <button disabled={isLoading} className= {cn(defaultButton, className)}>
-              {isLoading ? <Loader2 className=" h-4 s-4 animate-spin" /> : children}
-            
+        <button
+            disabled={isLoading}
+            className={cn(defaultButton, className)}
+            {...props}
+        >
+            {isLoading ? <Loader2 className=" h-4 s-4 animate-spin" /> : children}
+
         </button>
     )
 }
