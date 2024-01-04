@@ -32,17 +32,18 @@ const ContactComponent: FC<ContactComponentProps> = ({ }) => {
 
     const [showForm, setShowForm] = useState(false)
     return (
+
         <Accordion.Root
             className=""
             type="single"
             defaultValue=""
             collapsible
-
-        >
-            <Accordion.Item value="item-1">
+            
+            >
+            <Accordion.Item value="item-1" className='flex flex-col items-center justify-center'>
                 <Accordion.Header>
-                    <Accordion.Trigger>
-                        <Button className='w-48'>
+                    <Accordion.Trigger className=''>
+                        <Button className='w-48 mx-auto'>
                             Contact Form
                         </Button>
                     </Accordion.Trigger>
@@ -54,6 +55,7 @@ const ContactComponent: FC<ContactComponentProps> = ({ }) => {
                 </Accordion.Content>
             </Accordion.Item>
         </Accordion.Root>
+
 
     )
 }

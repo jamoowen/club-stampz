@@ -34,6 +34,7 @@ const axios = require('axios').default;
 import { AxiosError } from 'axios';
 import { useRouter } from 'next/navigation';
 
+
 const formSchema = z.object({
     subject: z.enum(["Stamping Inquiry", "General Inquiry", "Help"], {
         required_error: "You need to select a notification type.",
@@ -50,7 +51,9 @@ interface ContactFormProps {
 }
 
 const ContactForm: FC<ContactFormProps> = ({ }) => {
+
     const router = useRouter()
+    
     const form = useForm<z.infer<typeof formSchema>>({
         resolver: zodResolver(formSchema),
         defaultValues: {
@@ -65,22 +68,23 @@ const ContactForm: FC<ContactFormProps> = ({ }) => {
     const [loading, setLoading] = useState(false)
 
     const submitForm = async (values: z.infer<typeof formSchema>) => {
-        
+        const [refresh, setRefresh] = useState(false);
+
         setLoading(true)
         console.log(`submitting: ${values}, ${values.subject}, ${values.email}`)
 
         try {
             
-            const { data } = await axios.post('/api/contact', {
-                name: values.name,
-                email: values.email,
-                subject: values.subject,
-                message: values.message
-            }, {
-                headers: {
-                    'Content-Type': 'application/json'
-                }
-            });
+            // const { data } = await axios.post('/api/contact', {
+            //     name: values.name,
+            //     email: values.email,
+            //     subject: values.subject,
+            //     message: values.message
+            // }, {
+            //     headers: {
+            //         'Content-Type': 'application/json'
+            //     }
+            // });
 
             toast({
                 title: "Email sent!",
@@ -98,14 +102,19 @@ const ContactForm: FC<ContactFormProps> = ({ }) => {
             })
         } finally {
             setLoading(false);
+            // setTimeout(() => {
+            //     router.push('/')    
+            // }, 1000);
+            
             setTimeout(() => {
-                router.push('/')    
+                router.push('/') 
             }, 1000);
-        
+            setRefresh(!refresh);
         }
 
 
     }
+   
 
     return (
         <Form {...form}>
