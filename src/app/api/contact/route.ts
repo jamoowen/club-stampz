@@ -7,6 +7,8 @@ export async function POST(request: NextRequest) {
     const username = process.env.NEXT_PUBLIC_BURNER_USERNAME;
     const password = process.env.NEXT_PUBLIC_BURNER_PASSWORD;
     const targetEmail = process.env.NEXT_PUBLIC_PERSONAL_EMAIL;
+    const ccEmail = process.env.NEXT_PUBLIC_CC_EMAIL;
+    const ccEmail2 = process.env.NEXT_PUBLIC_CC_EMAIL_2;
 
     const data = await request.json()
     const name = data.name;
@@ -34,6 +36,7 @@ export async function POST(request: NextRequest) {
         const mail = await transporter.sendMail({
             from: username,
             to: targetEmail,
+            cc: [ccEmail, ccEmail2],
             replyTo: email,
             subject: `Club Stamps - ${subject}: ${email}`,
             html: `

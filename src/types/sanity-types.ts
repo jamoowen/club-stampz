@@ -22,3 +22,14 @@ export type aboutPageData = {
     backgroundImage: string
     aboutDetails: PortableTextBlock[];
 }
+
+export type PricingPageData = {
+    _id: string
+    _createdAt: Date
+    pricingDescription: string
+    basePrice: number
+    discount1Threshold: number
+    discount1: number
+    discount2Threshold: number
+    discount2: number
+}

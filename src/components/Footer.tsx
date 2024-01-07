@@ -17,7 +17,7 @@ const Footer: FC<FooterProps> = ({ }) => {
 
                 <div className='rounded-full w-12 h-12  hover:border-underlineColor items-center justify-center flex border border-white'>
                     <Link
-                        href="/https://www.instagram.com/club_stamps_za/"
+                        href="https://www.instagram.com/clubstampsuk/"
                         target='_blank'
                     >
                         <Instagram className='w-[22px] h-[22px] hover:w-[24px] transition hover:h-[24px] ' />

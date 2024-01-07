@@ -23,6 +23,11 @@ const nextConfig = {
                 hostname: "instagram.com",
                 port: "",
             },
+            {
+                protocol: "https",
+                hostname: "instagram.com/ajax",
+                port: "",
+            },
           
             
 

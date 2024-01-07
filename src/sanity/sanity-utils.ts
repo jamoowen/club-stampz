@@ -85,3 +85,24 @@ export async function getAboutPageData() {
         console.log("ERROR fetching about data from sanity", error)
     }
 }
+
+export async function getPricingPageData() {
+
+    try {
+        const data = client.fetch(
+            groq`*[_type == "pricingData"]{
+                _id,
+                _createdAt,
+                pricingDescription,
+                basePrice,
+                discount1Threshold,
+                discount1,
+                discount2Threshold,
+                discount2
+            }`
+        )
+        return data
+    } catch (error) {
+        console.log("ERROR fetching pricing page data from sanity", error)
+    }
+}

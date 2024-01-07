@@ -18,8 +18,8 @@ const page: FC<pageProps> = ({ }) => {
           We are currently available only within England and can be contacted through our Instagram page, or by filling out the below email form.
         </div>
         <div >
-          <Link href="https://www.instagram.com/club_stamps_za/" target='_blank' className='font-sans group flex flex-row shrink-0 gap-2 text-xl justify-center items-center'>
-            @club_stamps_za
+          <Link href="https://www.instagram.com/clubstampsuk/" target='_blank' className='font-sans group flex flex-row shrink-0 gap-2 text-xl justify-center items-center'>
+            @clubstampsuk
             <span className='group-hover:text-red-600'>
               <Instagram />
               </span>
