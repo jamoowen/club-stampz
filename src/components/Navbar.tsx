@@ -30,10 +30,6 @@ const navbarLinks = {
         name: 'Contact',
         link: '/contact'
     },
-    admin: {
-        name: 'Admin',
-        link: '/admin'
-    },
 
 }
 

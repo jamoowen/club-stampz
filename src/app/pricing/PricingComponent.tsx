@@ -66,7 +66,7 @@ const PricingComponent: FC<PricingComponentProps> = ({data}) => {
         setQuantity(Number(q))
         const totalP = calcPrice(q);
         setPrice(totalP);
-        console.log(JSON.stringify(data))
+        console.log()
         
         
 
