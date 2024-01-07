@@ -7,6 +7,8 @@ import { PortableText, PortableTextComponents } from '@portabletext/react'
 import Image from 'next/image'
 import { FC } from 'react'
 
+// export const dynamic = 'force-dynamic'
+
 interface pageProps {
 
 }
@@ -47,12 +49,12 @@ const page: FC<pageProps> = async ({ }) => {
 
 
       <div className='flex flex-col relative items-center'>
-        <Image
+        {/* <Image
           alt='image'
           fill
           src={data.backgroundImage}
           className='object-cover opacity-90 blur-sm -z-10 '
-        />
+        /> */}
         <BackgroundDiv>
           <h2 className='font-semibold pb-5 text-2xl'>Our Story</h2>
           <PortableText value={data.aboutDetails} components={components} />

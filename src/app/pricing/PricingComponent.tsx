@@ -93,9 +93,9 @@ const PricingComponent: FC<PricingComponentProps> = ({data}) => {
             </div>
             <div>
 
-                <div className='flex flex-col'>
+                <div className='flex gap-1 flex-col'>
                     <span>Total Price</span>
-                    {price}
+                    £{price}
                 </div>
 
             </div>

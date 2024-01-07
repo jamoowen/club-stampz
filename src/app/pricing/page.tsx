@@ -26,21 +26,21 @@ interface pageProps {
 
 
 
-const page: FC<pageProps> = async({ }) => {
-  // round prices to the newarest quarter
+const page: FC<pageProps> = async ({ }) => {
+  // round prices to the newarest quarter¢$›
   // variables -> Initial price (for 3 characters), 
   const data: PricingPageData = (await getPricingPageData())[0]
-  
+
   return (
-    <main className="h-full pt-10 flex mt-5 flex-col min-h-screen">
+    <main className="h-full mt-5 flex flex-col min-h-screen">
       <div className='flex justify-center'>
         <BackgroundDiv>
-          <span className='text-2xl underline my-2'>Stamping prices:</span>
+          <h2 className='font-semibold pb-5 text-2xl'>Our Story</h2>
           <div className='font-light'>
             {data.pricingDescription}
           </div>
-          
-          <PricingComponent data={data}/>
+
+          <PricingComponent data={data} />
         </BackgroundDiv>
       </div>
 
