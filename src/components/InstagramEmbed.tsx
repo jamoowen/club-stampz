@@ -13,6 +13,8 @@ const InstagramEmbed = () => {
     return () => {
       document.head.removeChild(script);
       script.remove();
+      
+      // @ts-ignore
       if (window.instgrm) delete window.instgrm;
 
     };
